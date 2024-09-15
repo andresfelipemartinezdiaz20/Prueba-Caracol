@@ -1,0 +1,43 @@
+.custom-audio-player{
+    background: @yellow;
+    padding: 5px 20px;
+    border-radius: 40px;
+    width: max-content;
+
+    .rigth-audio{
+        padding: 0 15px;
+    }
+
+    h3{
+        margin: 0;
+    }
+
+    .controls{
+        display: flex;
+    }
+
+    #playPauseBtn{
+        font-size: 0;
+        min-width: 40px;
+        min-height: 40px;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: none;
+        background: @black;
+
+        &::before{
+            font-size: 20px;
+            color: @yellow;
+        }
+    }
+
+    #currentTime,
+    #duration{
+        font-size: 13px;
+    }
+
+    input[type="range"]{
+        display: none;
+    }
+}

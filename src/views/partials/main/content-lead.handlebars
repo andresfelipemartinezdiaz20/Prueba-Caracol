@@ -1,0 +1,66 @@
+<div class="content">
+        <div class="content-left">
+            <div class="image"> 
+                <img 
+                    src="{{lead.[0].image.src}}" 
+                    srcset="{{lead.[0].image.srcset}}" 
+                    alt="{{lead.[0].alt}}" 
+                    width="{{lead.[0].image.width}}" 
+                    height="{{lead.[0].image.height}}"
+                    data-webp-src="{{lead.[0].image.webpSrc}}"
+                    data-webp-srcset="{{lead.[0].image.webpSrcset}}"
+                >
+            </div>
+        </div>    
+        <div class="content-right">
+            <h1>{{headline}}</h1>
+            <p>{{{subHeadline}}}</p>
+            {{#each audioPlayer }}
+                <div class="custom-audio-player">
+                    <div class="controls">
+                        <button id="playPauseBtn" class="fa-solid fa-play">Play</button>
+                        <div class="rigth-audio">
+                            <h3 id="audioTitle">{{audioTitle}}</h3>
+                            <span id="currentTime">00:00</span> -
+                            <span id="duration">{{formattedAudioDuration}}</span>
+                            <input type="range" id="seekBar" value="0" max="100">
+                        </div>
+                        
+                    </div>
+                    <audio id="audioElement">
+                        <source src="{{audioUrl}}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            {{/each}}
+            <div class="share">
+                <h3>Compartir:</h2>
+                <div class="actions">
+                    {{#each actions.[0].items}}
+                        {{#contains _template "/facebook/"}}
+                            <div class="facebook-share">
+                                <a href="https://www.facebook.com/dialog/share?app_id={{facebookAppId}}&display={{display}}&href={{shareHref}}&redirect_uri={{redirectUri}}" target="_blank" class="fa-brands fa-facebook">{{body}}</a>
+                            </div>
+                        {{/contains}}
+
+                        {{#contains _template "/twitter/"}}
+                            <div class="twitter-share">
+                                <a href="https://twitter.com/intent/tweet?hashtags={{hashtags}}&text={{text}}&url={{url}}" target="_blank" class="fa-brands fa-twitter">{{body}}</a>
+                            </div>
+                        {{/contains}}
+
+                        {{#contains _template "/whatsapp/"}}
+                            <div class="whatsapp-share">
+                                <a href="https://api.whatsapp.com/send?text={{description}}%20{{url}}" target="_blank" class="fa-brands fa-whatsapp">{{body}}</a>
+                            </div>
+                        {{/contains}}
+                    {{/each}}            
+                </div>
+
+
+            </div>
+        </div>
+        
+    </div>
+    
+</div>

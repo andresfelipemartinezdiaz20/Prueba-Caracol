@@ -1,0 +1,18 @@
+<nav id="menu" class="menu">   
+    <ul>
+        {{#each navigation}}
+            {{#each items}}
+                <li>
+                    {{#if attributes.length}}
+                        {{#each attributes}}
+                            <span>{{this}}</span> 
+                        {{/each}}
+                    {{/if}}
+                    <a href="{{href}}">{{text}}</a>
+                </li>
+            {{/each}}
+        {{/each}}
+    </ul>
+</nav>
+
+

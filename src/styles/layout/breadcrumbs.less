@@ -1,0 +1,55 @@
+.breadcrumbs{
+    max-width: @descktop;
+    margin: 40px auto;
+    padding: 0 20px;
+
+    a{
+        text-decoration: none;
+        color: @blue;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    ul{
+        display: flex;
+    }
+
+    li{
+        display: flex;
+
+        &:after{
+            display: block;
+            content: '>';
+            margin: 0 10px;
+            color: @blue;
+        }
+
+        &:last-child{
+            &::after{
+                display: none;
+            }
+
+            a{
+                cursor: default !important;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                max-width: 190px;
+                color: @black;
+                font-weight: normal;
+            }
+        }
+    }
+
+    @media( max-width: @mobile){
+        margin: 20px auto;
+        
+        li{
+            &:last-child{
+                a{
+                    max-width: 80px;
+                }
+            }
+        }
+    }
+}

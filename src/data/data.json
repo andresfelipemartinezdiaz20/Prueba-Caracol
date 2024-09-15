@@ -1,0 +1,9 @@
+{
+    "title": "Backend con Handlebars y JSON",
+    "description": "Este es un ejemplo de cómo cargar JSON local en Handlebars.",
+    "items": [
+      { "name": "Item 1", "price": 100 },
+      { "name": "Item 2", "price": 200 },
+      { "name": "Item 3", "price": 300 }
+    ]
+  }

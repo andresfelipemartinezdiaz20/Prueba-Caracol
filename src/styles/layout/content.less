@@ -1,0 +1,68 @@
+.content{
+    max-width: @descktop;
+    margin: 0 auto 40px;
+    display: flex;
+    padding: 0 20px;
+
+    .content-left{
+        padding: 0 20px 0 0;
+        width: 60%;
+    }
+
+    .content-right{
+        width: 40%;
+        padding: 0 15px;
+        h1{
+            color: @blue;   
+            margin-top: 0;
+        }
+    }
+
+    .share{
+        margin: 20px 0;
+
+        h3{
+            font-size: 15px;
+            margin: 0 0 20px 0;
+            color: @blue;
+        }
+
+        .actions{
+            display: flex;
+        }
+
+        a{
+            font-size: 0;
+            display: block;
+            text-decoration: none;
+            margin: 0 20px 0 0;
+
+            &::before{
+                font-size: 20px;
+            }
+        }
+
+        .facebook-share a::before{
+            color: @facebook;
+        }
+
+        .twitter-share a::before{
+            color: @twitter;
+        }
+
+        .whatsapp-share a::before{
+            color: @whatsapp;
+        }
+    }
+
+    @media( max-width: @mobile){
+        flex-wrap: wrap;
+
+        .content-left,
+        .content-right{
+            width: 100%;
+            padding: 0;
+        }
+    }
+}
+

@@ -1,0 +1,9 @@
+<ul>
+    {{#each social}}
+        {{#each items}}
+            <li class="social-item">
+                <a href="{{href}}" title="{{socialService}}" class="fa-brands fa-{{socialService}}">{{body}}</a>
+            </li>
+        {{/each}}
+    {{/each}}
+</ul>
